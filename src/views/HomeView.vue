@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import Dummy from './components/DummyComponent.vue'
 </script>
 
 <template>
-  <v-alert type="info">Welcome To Vue3 Reusability Project</v-alert>
+  <dummy-component />
 </template>
