@@ -1,7 +1,5 @@
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
 
 const vuetify = createVuetify({
   theme: {
@@ -10,9 +8,7 @@ const vuetify = createVuetify({
         dark: true
       }
     }
-  },
-  components,
-  directives,
+  }
 })
 
 export default vuetify

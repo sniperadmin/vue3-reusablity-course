@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Dummy from './components/DummyComponent.vue'
+import DummyComponent from '@/components/DummyComponent.vue'
 </script>
 
 <template>
