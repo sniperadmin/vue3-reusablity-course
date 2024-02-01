@@ -1,7 +1,7 @@
 // NOTE: You can override vuetify global variables here
 $font-family: "Nunito Sans", sans-serif;
 
-@forward 'vuetify' with (
+@use 'vuetify' with (
   $typography: (
     'h1': ('size': 2rem, 'weight': 500, 'line-height': '120%', 'font-family': $font-family),
     'h2': ('size': 1.75rem, 'weight': 600, 'line-height': '150%', 'font-family': $font-family),
