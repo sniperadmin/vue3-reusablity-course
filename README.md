@@ -2,19 +2,6 @@
 
 This template should help get you started developing with Vue 3 + Vuetify in Vite.
 
-## Software Industry Stages
-| Stage                             | Description                                                                                                                                                                                                                                   |
-|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **1. Conception/Idea**            | - Initial phase where the idea for a software product is conceived.<br/> - Identification of market needs, problem-solving, or innovation. <br/> - High-level discussions to define the purpose and goals of the software.                    |
-| **2. Planning**                   | - Detailed planning involving scope, requirements, timeline, budget, and risks. <br/> - Collaboration between project managers and stakeholders. <br/> - Creation of a comprehensive project plan.                                            |
-| **3. Design**                     | - Creation of software architecture, technical specifications, and user interface design. <br/> - Defining the overall structure and components of the software. <br/> - Detailed documentation of the design elements.                       |
-| **4. Implementation/Development** | - Actual coding and development of the software based on design specifications. <br/> - Writing and testing code to ensure functionality. <br/> - Iterative development based on agile or other methodologies.                                |
-| **5. Testing**                    | - Quality assurance and testing to identify and fix bugs, errors, and issues. <br/> - Various testing levels including unit, integration, system, and user acceptance testing. <br/> - Validation of software against specified requirements. |
-| **6. Deployment/Release**         | - Release or deployment of the software to the production environment for users. <br/> - Gradual rollout or full release depending on the development strategy. <br/> - Monitoring for any issues during the initial deployment.              |
-| **7. Maintenance and Support**    | - Ongoing support and addressing issues post-deployment. <br/> - Corrective maintenance (fixing bugs), adaptive maintenance (adjusting to changes), and perfective maintenance (adding features).                                             |
-| **8. Updates and Upgrades**       | - Releasing updates to address issues, improve performance, or add new features. <br/> - Consideration of user feedback for continuous improvement.                                                                                           |
-| **9. Retirement/End-of-Life**     | - Retirement of the software when it reaches the end of its lifecycle. <br/> - Transitioning users to newer alternatives or versions.                                                                                                         |
-
 ## Design Systems List
 The following link shows the full list of
 [all design systems](https://designsystemsrepo.com/design-systems/)
@@ -24,6 +11,152 @@ The following link has [all figma designs](https://www.figma.com/file/Gh13ih0L96
 
 ## Domain Driven Testing (optional)
 We can use [vitest-cucumber-plugin](https://github.com/samuel-ziegler/vitest-cucumber-plugin)
+
+## Charts
+[Charts for Vue](https://github.com/ecomfe/vue-echarts?tab=readme-ov-file#readme)
+
+
+## Spotting Reusable Components in Figma
+The following components can be reusable because
+they are used within one or two pages:
+```mermaid
+---
+title: Individual Components
+---
+flowchart LR
+id1([Product Item]) ~~~
+id2([Statistics Card]) ~~~
+id3([Chart Card])
+id4([Empty State Card]) ~~~
+id5([Message Component]) ~~~
+id6([Missing Snackbar])
+id7([Long Pricing Tier Card]) ~~~
+id8([Contact Item]) ~~~
+id9([Team Item])
+```
+
+We found that input component is shared:
+```mermaid
+---
+title: Input Component is shared
+---
+flowchart LR
+   id1(["`input
+'shared Component'
+`"]):::foo
+
+id6([auth form]) --- id1
+id2([contact form]) --- id1
+id1 --- id3([event form])
+id1 --- id4([team form])
+id1 --- id5([settings form])
+
+classDef foo stroke:#f00,color:yellow;
+classDef default font-size: 20px;
+```
+
+The avatar also is shared across some components
+
+## Data models
+Once we spotted the components, we can extract the metadata
+from the design of each component in figma.
+
+### Product Item
+Let's start with the `productItem`:
+```mermaid
+classDiagram
+    direction RL
+  
+    class Product {
+      +image: String
+      +productName: String
+      +favourited_by: Array<string>
+      +price: Object
+      +Rating: Number
+   }
+   
+```
+
+### Statistics Card
+This card will have the following metadata:
+```mermaid
+classDiagram
+   direction RL
+   class Stat {
+      +name: String
+      +icon: String
+      +value: Number
+      +oneDayPercentile: String
+      +date: Number
+      +isUp: Boolean
+   }
+```
+### Chart Card
+```mermaid
+classDiagram
+   direction RL
+   class Chart {
+       +titleX: String
+       +dataX: Array<number>
+       +titleY: String
+       +dataY: Array<number>
+   }
+```
+
+### Pricing Card
+```mermaid
+classDiagram
+   direction RL
+   class Pricing {
+       +title: String
+       +subtitle: String
+       +price: Object
+       +features: Array<string>
+   }
+```
+
+### Contact Details
+```mermaid
+classDiagram
+   direction RL
+   class Contact {
+       +image: String
+       +firstName: String
+       +lastName: String
+       +email: Object
+       +phone: String
+       +dateOfBirth: String
+       +gender: String
+   }
+```
+
+### Event Meta
+```mermaid
+classDiagram
+   direction RL
+   class Event {
+      name: String
+      time: String
+      date: String
+      address: String
+      contactNumber: String
+   }
+```
+
+### Team Member
+```mermaid
+classDiagram
+   direction RL
+   class TeamMember {
+       +image: String
+       +firstName: String
+       +lastName: String
+       +email: Object
+       +phone: String
+       +position: String
+       +gender: String
+   }
+```
 
 ## Recommended IDE Setup
 
