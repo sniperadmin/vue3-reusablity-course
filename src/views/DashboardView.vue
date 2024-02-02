@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import VStat from '@/components/VStat/Index.vue'
+import { useDisplay } from 'vuetify'
+
+const { mobile } = useDisplay()
 
 const statistics = [
   {
@@ -51,7 +54,7 @@ const statistics = [
 
 <template>
   <v-row>
-    <v-col v-for="item in statistics" :key="item.id" :cols="12/statistics.length">
+    <v-col v-for="item in statistics" :key="item.id" :cols="mobile ? 12 : 3">
       <v-stat
         :name="item.name"
         :value="item.value"
