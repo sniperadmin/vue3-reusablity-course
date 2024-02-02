@@ -8,12 +8,7 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineConfig({
   plugins: [
     vue(),
-    vuetify({
-      autoImport: true,
-      styles: {
-        configFile: 'src/assets/variables.scss',
-      }
-    })
+    vuetify()
   ],
   resolve: {
     alias: {
