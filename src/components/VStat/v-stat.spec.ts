@@ -2,7 +2,7 @@ import { describe, beforeEach, afterEach, expect, test } from 'vitest'
 import { mount, VueWrapper } from '@vue/test-utils'
 import VStat from './Index.vue'
 
-let wrapper: VueWrapper<typeof VStat>
+let wrapper: VueWrapper
 describe('VStat Component', () => {
   beforeEach(() => {
     wrapper = mount(VStat)
