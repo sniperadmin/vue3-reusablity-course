@@ -14,13 +14,10 @@ export default defineComponent({
       <v-btn to="/">Home</v-btn>
     </v-app-bar>
     <v-main>
-      <v-container>
+      <v-container fluid>
         <slot />
       </v-container>
     </v-main>
-    <v-footer>
-      Copyright Nasr Galal
-    </v-footer>
   </v-app>
 </template>
 
