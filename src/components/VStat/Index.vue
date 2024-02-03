@@ -7,6 +7,8 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
+import { useDisplay } from 'vuetify'
+
 defineProps({
   name: {
     type: String,
@@ -41,12 +43,14 @@ defineProps({
     default: 0
   }
 })
+
+const { mobile } = useDisplay()
 </script>
 
 <template>
   <v-card rounded="lg">
     <template #title>
-      <p data-test="name" class="text-body-1 font-weight-bold text-capitalize">{{ name }}</p>
+      <p data-test="name" class="font-weight-bold text-capitalize" :class="mobile ? 'text-body-2' : 'text-body-1'">{{ name }}</p>
     </template>
     <template #append>
       <v-avatar size="60" :color="`${bgColor}-lighten-5`" rounded="xl" class="p-absolute" style="top: 1.2rem;">
@@ -55,14 +59,14 @@ defineProps({
     </template>
 
     <v-card-text>
-      <p class="text-h2">{{ value }}</p>
+      <p :class="mobile ? 'text-h5' : 'text-h2'">{{ value }}</p>
     </v-card-text>
 
     <v-card-actions>
       <v-avatar color="transparent">
         <v-icon data-test="small-icon" :icon="isUp ? 'custom:VChartLineUp' : 'custom:VChartLineDown'" size="20"></v-icon>
       </v-avatar>
-      <p class="text-body-1 mx-1">
+      <p class="mx-1" :class="mobile ? 'text-body-2' : 'text-body-1'">
         <span :class="isUp ? 'text-secondary': 'text-error'">
           {{ percentage }} %
         </span>
