@@ -1,5 +1,5 @@
 import '@/assets/main.scss'
-import { h } from "vue";
+import { h } from 'vue'
 import { createVuetify, type IconProps, type IconSet } from 'vuetify'
 import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 import VChartLineUp from '@/components/icons/VChartLineUp/Index.vue'
@@ -9,12 +9,12 @@ import { mdiAccountMultiple, mdiCube, mdiChartLine, mdiHistory } from '@mdi/js'
 const customSvgNameToComponent: any = {
   VChartLineUp,
   VChartLineDown
-};
+}
 
 const customSVGs: IconSet = {
   // @ts-ignore
-  component: (props: IconProps) => h(customSvgNameToComponent[props.icon]),
-};
+  component: (props: IconProps) => h(customSvgNameToComponent[props.icon])
+}
 
 const vuetify = createVuetify({
   theme: {

@@ -3,7 +3,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'DefaultLayout',
-  components: {},
+  components: {}
 })
 </script>
 
@@ -21,6 +21,4 @@ export default defineComponent({
   </v-app>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

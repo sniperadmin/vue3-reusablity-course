@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import VStat from '@/components/VStat/Index.vue'
 import { useDisplay } from 'vuetify'
+import VStat from '@/components/VStat/Index.vue'
+import VChart from '@/components/VChart/Index.vue'
 
 const { mobile } = useDisplay()
 
@@ -14,7 +15,7 @@ const statistics = [
     value: 40689,
     isUp: true,
     percentage: 8.5,
-    date: 0,
+    date: 0
   },
   {
     id: 'users',
@@ -25,7 +26,7 @@ const statistics = [
     value: 10293,
     isUp: true,
     percentage: 1.3,
-    date: 0,
+    date: 0
   },
   {
     id: 'users',
@@ -36,7 +37,7 @@ const statistics = [
     value: 89000,
     isUp: false,
     percentage: 4.3,
-    date: 0,
+    date: 0
   },
   {
     id: 'users',
@@ -47,7 +48,7 @@ const statistics = [
     value: 2040,
     isUp: true,
     percentage: 1.8,
-    date: 0,
+    date: 0
   }
 ]
 </script>
@@ -67,4 +68,10 @@ const statistics = [
       />
     </v-col>
   </v-row>
+
+  <suspense>
+      <v-lazy>
+        <v-chart class="mt-3" />
+      </v-lazy>
+  </suspense>>
 </template>

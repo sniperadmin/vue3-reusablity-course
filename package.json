@@ -14,12 +14,16 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lintfix": "yarn lint -- --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/echarts": "^4.9.22",
+    "echarts": "^5.4.3",
     "pinia": "^2.1.7",
     "vite-plugin-vuetify": "^2.0.1",
     "vue": "^3.3.11",
+    "vue-echarts": "^6.6.8",
     "vue-router": "^4.2.5",
     "vuetify": "^3.5.1"
   },
