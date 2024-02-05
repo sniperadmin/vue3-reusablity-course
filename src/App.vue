@@ -9,6 +9,4 @@ import DefaultLayout from '@/layouts/default.vue'
   </default-layout>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

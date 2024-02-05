@@ -50,10 +50,22 @@ const { mobile } = useDisplay()
 <template>
   <v-card rounded="lg">
     <template #title>
-      <p data-test="name" class="font-weight-bold text-capitalize" :class="mobile ? 'text-body-2' : 'text-body-1'">{{ name }}</p>
+      <p
+        data-test="name"
+        class="font-weight-bold text-capitalize"
+        :class="mobile ? 'text-body-2' : 'text-body-1'"
+      >
+        {{ name }}
+      </p>
     </template>
     <template #append>
-      <v-avatar size="60" :color="`${bgColor}-lighten-5`" rounded="xl" class="p-absolute" style="top: 1.2rem;">
+      <v-avatar
+        size="60"
+        :color="`${bgColor}-lighten-5`"
+        rounded="xl"
+        class="p-absolute"
+        style="top: 1.2rem"
+      >
         <v-icon :icon="icon" size="30" :color="color" />
       </v-avatar>
     </template>
@@ -64,19 +76,20 @@ const { mobile } = useDisplay()
 
     <v-card-actions>
       <v-avatar color="transparent">
-        <v-icon data-test="small-icon" :icon="isUp ? 'custom:VChartLineUp' : 'custom:VChartLineDown'" size="20"></v-icon>
+        <v-icon
+          data-test="small-icon"
+          :icon="isUp ? 'custom:VChartLineUp' : 'custom:VChartLineDown'"
+          size="20"
+        ></v-icon>
       </v-avatar>
       <p class="mx-1" :class="mobile ? 'text-body-2' : 'text-body-1'">
-        <span :class="isUp ? 'text-secondary': 'text-error'">
-          {{ percentage }} %
-        </span>
+        <span :class="isUp ? 'text-secondary' : 'text-error'"> {{ percentage }} % </span>
 
-        <span>{{ isUp ? 'Up' : 'Down' }} from {{ date }}</span>
+        <span>{{ isUp ? 'Up' : 'Down' }} from {{ date }}</span
+        >
       </p>
     </v-card-actions>
   </v-card>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
