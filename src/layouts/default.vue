@@ -12,6 +12,7 @@ export default defineComponent({
     <v-app-bar>
       <v-spacer />
       <v-btn to="/">Home</v-btn>
+      <v-btn to="/products">Products</v-btn>
     </v-app-bar>
     <v-main>
       <v-container fluid>
