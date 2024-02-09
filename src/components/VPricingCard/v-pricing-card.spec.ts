@@ -2,7 +2,7 @@ import { mount, type VueWrapper } from '@vue/test-utils'
 import { describe, beforeEach, afterEach, test, expect } from 'vitest'
 import VPricingCard from './Index.vue'
 
-let wrapper: VueWrapper
+let wrapper: VueWrapper<typeof VPricingCard>
 
 const title = (wrapper: VueWrapper) => wrapper.find('[data-testid="title"]')
 const subtitle = (wrapper: VueWrapper) => wrapper.find('[data-testid="subtitle"]')
