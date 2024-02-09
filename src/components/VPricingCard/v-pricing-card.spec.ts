@@ -4,6 +4,12 @@ import VPricingCard from './Index.vue'
 
 let wrapper: VueWrapper
 
+const title = (wrapper: VueWrapper) => wrapper.find('[data-testid="title"]')
+const subtitle = (wrapper: VueWrapper) => wrapper.find('[data-testid="subtitle"]')
+const pricing = (wrapper: VueWrapper) => wrapper.find('[data-testid="pricing"]')
+// const startCta = (wrapper: VueWrapper) => wrapper.find('[data-testid="start-cta"]')
+// const trialCta = (wrapper: VueWrapper) => wrapper.find('[data-testid="trial-cta"]')
+
 describe('VPricingCard', () => {
   beforeEach(() => {
     wrapper = mount(VPricingCard, {
@@ -57,7 +63,24 @@ describe('VPricingCard', () => {
     wrapper.unmount()
   })
 
-  test('should load', () => {
-    expect(wrapper.vm).toBeTruthy()
+  // TODO: add test cases here!
+  test('should load title', () => {
+    expect(title(wrapper).text()).toBe(wrapper.vm.$props.item.title)
   })
+
+  test('should load subtitle', () => {
+    expect(subtitle(wrapper).text()).toBe(wrapper.vm.$props.item.subtitle)
+  })
+
+  test('should load pricing', () => {
+    expect(pricing(wrapper).text()).toBe(wrapper.vm.$props.item.pricing.symbol + wrapper.vm.$props.item.pricing.value)
+  })
+
+  test('should load features', () => {
+    const featureElements = wrapper.findAll('.v-list-item')
+    expect(featureElements.length).toBe(7)
+  })
+
+  test.todo('check start tier cta')
+  test.todo('check trial cta')
 })

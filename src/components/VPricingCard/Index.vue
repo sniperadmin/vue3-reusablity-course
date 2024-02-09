@@ -18,14 +18,14 @@ defineProps({
 <template>
   <v-card rounded="xl">
     <v-card-title>
-      <p class="text-h3 text-center text-capitalize">{{ item.title }}</p>
+      <p data-testid="title" class="text-h3 text-center text-capitalize">{{ item.title }}</p>
     </v-card-title>
     <v-card-subtitle>
-      <p class="text-center text-capitalize">{{ item.subtitle }}</p>
+      <p data-testid="subtitle" class="text-center text-capitalize">{{ item.subtitle }}</p>
     </v-card-subtitle>
 
-    <p class="text-h1 font-weight-bold text-center">
-      {{ item.pricing.value }}
+    <p data-testid="pricing" class="text-h1 font-weight-bold text-center">
+      {{ item.pricing.symbol }}{{ item.pricing.value }}
     </p>
     <v-card-text class="text-center">
       <v-divider class="mx-auto mb-5" />
@@ -43,11 +43,11 @@ defineProps({
   </v-card-text>
 
   <v-card-actions class="flex-column pt-0">
-    <v-btn color="primary" variant="outlined" class="mb-4">
+    <v-btn data-testid="start-cta" color="primary" variant="outlined" class="mb-4">
       get started
     </v-btn>
 
-    <v-btn class="font-weight-bold">start your 30 day free trial</v-btn>
+    <v-btn data-testid="trial-cta" class="font-weight-bold">start your 30 day free trial</v-btn>
   </v-card-actions>
   </v-card>
 </template>
